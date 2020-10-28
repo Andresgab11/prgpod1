@@ -14,3 +14,8 @@ df.head()
 print(df["age"].mean())
 
 # %%
+row_count = len(df)
+
+print(row_count)
+
+df[0:0]
