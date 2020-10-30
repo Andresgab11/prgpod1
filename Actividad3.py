@@ -16,6 +16,6 @@ sns.set_theme(style="white")
 sns.displot(x="customer", data=df)
 
 # %%
-
+df.boxplot(by ='discount',grid='True',column =['weekday'], color='red')
 
 # %%
