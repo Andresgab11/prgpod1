@@ -30,3 +30,9 @@ print(f"Numbre of clusters: {k}")
 kmeans = KMeans(n_clusters=k).fit(df[["total_items", "weekday"]])
 sns.scatterplot(data=df, x="weekday", y="total_items", hue=kmeans.labels_)
 plt.show()
+
+# %%
+cluster0 = df[kmeans.labels_ == 0]
+cluster0.describe()
+
+# %%
