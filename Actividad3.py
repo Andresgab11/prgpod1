@@ -16,7 +16,6 @@ sns.set_theme(style="white")
 sns.displot(x="customer", data=df)
 
 # %%
-g = sns.histplot(data=df, x="total_items", multiple="stack", hue="dicount%")
-for q in df.age.quantile([.25, .5, .75]):
-    g.axvline(q, linestyle=":")
-    g.text(q, 5, q)
+
+
+# %%
