@@ -7,7 +7,7 @@ from kneed import KneeLocator
 
 df = pd.read_csv("ulabox_orders_with_categories_partials_2017.csv")
 
-dfp = df[["total_items", "weekday"]]
+dfp = df[["Baby%", "Pets%"]]
 
 # %%
 
@@ -24,11 +24,11 @@ plt.show()
 
 k = round(kneedle.knee)
 
-print(f"Numbre of clusters: {k}")
+print(f"Number of clusters: {k}")
 
 # %%
-kmeans = KMeans(n_clusters=k).fit(df[["total_items", "weekday"]])
-sns.scatterplot(data=df, x="weekday", y="total_items", hue=kmeans.labels_)
+kmeans = KMeans(n_clusters=k).fit(df[["Baby%", "Pets%"]])
+sns.scatterplot(data=df, x="Baby%", y="Pets%", hue=kmeans.labels_)
 plt.show()
 
 # %%
