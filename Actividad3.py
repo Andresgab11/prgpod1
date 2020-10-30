@@ -15,6 +15,9 @@ sns.set_theme(style="white")
 sns.displot(x="customer", data=df)
 
 # %%
-df.boxplot(by ='weekday',grid='True',column =['discount'], color='red')
+df.boxplot(by ='hour',grid='True',column =['total_items'], color='red')
+
+# %%
+df.hist(by ='hour',grid='True',column =['total_items'])
 
 # %%
