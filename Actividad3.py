@@ -15,13 +15,13 @@ sns.set_theme(style="white")
 sns.displot(x="customer", data=df)
 
 # %%
-df.boxplot(by ='hour',grid='True',column =['total_items'], color='red')
+df.boxplot(by ='weekday',grid='True',column =['hour'], color='red')
 
 # %%
 sns.histplot(data=df, x="hour", y="total_items")
 
 # %%
-g = sns.histplot(data=df, x="hour", multiple="stack", hue="weekday")
+g = sns.histplot(data=df, x="hour", multiple="stack", hue="total_items")
 for q in df.hour.quantile([.25, .5, .75]):
     g.axvline(q, linestyle=":")
     g.text(q, 5, q)
@@ -30,6 +30,6 @@ for q in df.hour.quantile([.25, .5, .75]):
 df.corr()
 
 # %%
-sns.heatmap(df.corr(), annot=True)
+sns.heatmap(df.corr())
 
 # %%
